@@ -1,0 +1,27 @@
+input::placeholder {
+    color: #c8c8c8;
+}
+li {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    span i.icon{
+        margin-right: 15px;
+    }
+}
+
+
+// Utilities
+.c-pointer {
+    cursor: pointer !important;
+}
+.bg-custom-danger {
+    background: #f9dede;
+    color: #ff0000;
+}
+.bg-custom-success {
+    background: #d6f5d6;
+    color: #008000;
+}

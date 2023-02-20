@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2 mt-5">
+            <input 
+                type="text" 
+                [(ngModel)]="nameTask"
+                (keyup.enter)="addTask()"
+                class="form-control text-center fs-1" 
+                placeholder="Ingrese su tarea...">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3 mt-3">
+            <div
+                *ngIf="listTasks.length === 0" 
+                class="alert alert-success text-center fw-bold" 
+                role="alert">No hay tareas pendientes
+            </div>
+            <div 
+                *ngIf="listTasks.length > 0" 
+                class="alert alert-danger text-center fw-bold" 
+                role="alert">
+                Sus tareas pendientes
+            </div>
+            <ul class="list-group">
+                <ng-container *ngFor="let task of listTasks; let i = index">
+                    <li 
+                        (click)="updateTask( task, i )"
+                        [ngClass]="task.state === false ? 'bg-custom-danger' : 'bg-custom-success'"
+                        class="list-group-item p-3">
+                        <span class="c-pointer">
+                            <i 
+                                [ngClass]="!task.state ? 'icon far fa-circle text-danger' : 'icon fas fa-check-circle text-success'">
+                            </i>
+                            <span>{{ task.name }}</span>
+                        </span>
+                        <i 
+                            (click)="deleteItem( i )"
+                            class="fas fa-trash text-danger c-pointer"></i>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>
