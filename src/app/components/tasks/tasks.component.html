@@ -32,7 +32,7 @@
                             <i 
                                 [ngClass]="!task.state ? 'icon far fa-circle text-danger' : 'icon fas fa-check-circle text-success'">
                             </i>
-                            <span>{{ task.name }}</span>
+                            <span>{{ task.name | titlecase }}</span>
                         </span>
                         <i 
                             (click)="deleteItem( i )"

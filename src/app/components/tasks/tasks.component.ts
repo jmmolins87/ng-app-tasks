@@ -17,14 +17,7 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCapitalizeFirstLetter( text: string ) {
-    return text.charAt(0).toUpperCase() + text.slice(1);
-  }
-
   addTask() {
-    
-    // Ponemos el texto capitalizado
-    this.getCapitalizeFirstLetter( this.nameTask );
 
     // Crear objeto tarea
     const TASK: Task = {
